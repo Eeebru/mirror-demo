@@ -1,6 +1,6 @@
 # Mirror-demo
 
-### Testing
+### The moorings
 
 ## Getting started
 
