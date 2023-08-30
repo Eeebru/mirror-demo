@@ -35,5 +35,5 @@ install_apptainer:
     - apptainer --version
     - apt-get install -y apptainer-suid
     - apt-get update
-    - apptainer pull docker://ghcr.io/apptainer/lolcow
-    - apptainer run docker://alpine echo "hello"
+    # - apptainer pull docker://ghcr.io/apptainer/lolcow
+    - apptainer run docker://alpine echo "hello" --with-suid
