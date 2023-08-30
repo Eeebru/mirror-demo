@@ -2,9 +2,7 @@ image: ubuntu:20.04
 
 default:
   tags:
-    - Vlab
     - all
-    - virtual-lab
 
 stages:
   # - vlab
