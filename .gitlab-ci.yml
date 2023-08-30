@@ -4,6 +4,7 @@ default:
   tags:
     - Vlab
     - all
+    - virtual-lab
 
 stages:
   # - vlab
