@@ -33,7 +33,7 @@ install_apptainer:
   script:
     - apt-get install -y apptainer
     - apptainer --version
-    - apt-get install apptainer-suid
+    - apt-get install -y apptainer-suid
     - apt-get update
     - apptainer pull docker://ghcr.io/apptainer/lolcow
     - apptainer exec lolcow_latest.sif cowsay moo
