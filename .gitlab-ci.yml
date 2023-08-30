@@ -1,0 +1,39 @@
+image: ubuntu:20.04
+
+default:
+  tags:
+    - Vlab
+    - all
+
+stages:
+  # - vlab
+  - apptainer
+ # - test
+
+
+
+# vlab_installation:
+#   stage: vlab
+#   image: ubuntu:20.04
+#   before_script:
+#     - apt-get update && apt-get install -y wget
+#   script:
+#     - wget https://gitlab.com/ibsim/virtuallab/-/raw/dev/Scripts/Install/Host/Install_main.sh
+#     - chmod 755 Install_main.sh
+#     - ./Install_main.sh -B dev -y
+#     - source ~/.VLprofile
+#     - VirtualLab --test
+
+install_apptainer:
+  stage: apptainer
+  before_script:
+    - apt-get update -y && apt-get upgrade -y
+    - apt-get install -y software-properties-common
+    - add-apt-repository -y ppa:apptainer/ppa
+    - apt-get update
+  script:
+    - apt-get install -y apptainer
+    - apptainer --version
+    - apt-get update
+    - apptainer pull docker://ghcr.io/apptainer/lolcow
+    - apptainer exec lolcow_latest.sif cowsay moo
